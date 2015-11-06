@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Sidebar View Controller-->
+        <scene sceneID="9QF-hg-46q">
+            <objects>
+                <viewController storyboardIdentifier="SidebarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F3d-RD-cio" customClass="SidebarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SzU-SK-FT5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lhc-6s-uZh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kI8-Va-CZj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-Wn-zNn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="bac-2k-1SD" kind="embed" identifier="embedSideView" id="M4F-Qn-26E"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmM-Ii-qhR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="xsD-h3-2wh" kind="embed" identifier="embedMainView" id="rxk-HU-p2B"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JM6-gV-b4L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lhc-6s-uZh" firstAttribute="top" secondItem="fmM-Ii-qhR" secondAttribute="bottom" id="7MQ-um-Xtg"/>
+                            <constraint firstItem="Lhc-6s-uZh" firstAttribute="top" secondItem="Srb-Wn-zNn" secondAttribute="bottom" id="8X9-DF-taS"/>
+                            <constraint firstItem="Srb-Wn-zNn" firstAttribute="width" secondItem="kI8-Va-CZj" secondAttribute="width" id="JbT-Pa-cxI"/>
+                            <constraint firstItem="fmM-Ii-qhR" firstAttribute="width" secondItem="kI8-Va-CZj" secondAttribute="width" id="MEW-95-aBX"/>
+                            <constraint firstAttribute="trailing" secondItem="fmM-Ii-qhR" secondAttribute="trailing" id="WV7-uz-rMe"/>
+                            <constraint firstItem="JM6-gV-b4L" firstAttribute="bottom" secondItem="fmM-Ii-qhR" secondAttribute="bottom" id="Xyf-4o-hKC"/>
+                            <constraint firstItem="JM6-gV-b4L" firstAttribute="top" secondItem="fmM-Ii-qhR" secondAttribute="top" id="aJX-XT-M0Q"/>
+                            <constraint firstItem="JM6-gV-b4L" firstAttribute="leading" secondItem="kI8-Va-CZj" secondAttribute="leading" id="pIt-As-fVq"/>
+                            <constraint firstItem="fmM-Ii-qhR" firstAttribute="height" secondItem="kI8-Va-CZj" secondAttribute="height" id="qqF-Qq-In3"/>
+                            <constraint firstAttribute="trailing" secondItem="Srb-Wn-zNn" secondAttribute="trailing" id="sFk-7J-5Rh"/>
+                            <constraint firstItem="JM6-gV-b4L" firstAttribute="trailing" secondItem="fmM-Ii-qhR" secondAttribute="trailing" id="tLh-jT-cvd"/>
+                            <constraint firstItem="Srb-Wn-zNn" firstAttribute="height" secondItem="kI8-Va-CZj" secondAttribute="height" id="tvZ-Ig-6GW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="constraintMainViewTrailing" destination="WV7-uz-rMe" id="sEn-eP-uI2"/>
+                        <outlet property="mainView" destination="fmM-Ii-qhR" id="0q0-mj-l5z"/>
+                        <outlet property="sideView" destination="Srb-Wn-zNn" id="KBp-HU-t5x"/>
+                        <outlet property="tapView" destination="JM6-gV-b4L" id="uRu-jq-6rc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xn-w9-PIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714.5" y="607.5"/>
+        </scene>
+        <!--ListNavigationController-->
+        <scene sceneID="wWe-Xq-mgF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="ListNavigationController" id="xsD-h3-2wh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WB2-Rg-bfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175.5" y="510"/>
+        </scene>
+        <!--SideViewController-->
+        <scene sceneID="gkG-hR-IOV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SideViewController" id="bac-2k-1SD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIz-Iv-kki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175.5" y="698"/>
+        </scene>
+    </scenes>
+</document>
