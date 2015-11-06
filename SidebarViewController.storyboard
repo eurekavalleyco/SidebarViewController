@@ -66,13 +66,13 @@
             </objects>
             <point key="canvasLocation" x="714.5" y="607.5"/>
         </scene>
-        <!--ListNavigationController-->
+        <!--MainViewController-->
         <scene sceneID="wWe-Xq-mgF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="ListNavigationController" id="xsD-h3-2wh" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainViewController" id="xsD-h3-2wh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WB2-Rg-bfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175.5" y="510"/>
+            <point key="canvasLocation" x="1174.5" y="512"/>
         </scene>
         <!--SideViewController-->
         <scene sceneID="gkG-hR-IOV">
