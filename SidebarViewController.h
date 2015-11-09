@@ -11,14 +11,15 @@
 #pragma mark - // IMPORTS (Public) //
 
 #import <UIKit/UIKit.h>
+#import "SidebarViewControllerProtocols.h"
 
 #pragma mark - // PROTOCOLS //
 
 #pragma mark - // DEFINITIONS (Public) //
 
 @interface SidebarViewController : UIViewController
-@property (nonatomic, strong) UIViewController *mainViewController;
-@property (nonatomic, strong) UIViewController *sideViewController;
+@property (nonatomic, strong) IBOutlet UIViewController <SidebarMainViewControllerProtocol> *mainViewController;
+@property (nonatomic, strong) IBOutlet UIViewController <SidebarSideViewControllerProtocol> *sideViewController;
 - (void)setMainViewOffsetPortrait:(CGFloat)offset;
 - (void)setMainViewOffsetLandscape:(CGFloat)offset;
 - (void)setMainViewBouncesOnOvershoot:(BOOL)bounces;
