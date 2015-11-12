@@ -437,7 +437,6 @@
 {
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeSetter tags:@[AKD_UI] message:nil];
     
-    [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeDebug methodType:AKMethodTypeSetter tags:@[AKD_UI] message:[NSString stringWithFormat:@"%@ = %f", stringFromVariable(offset), offset]];
     if (offset < 0.0f)
     {
         if (self.mainViewBouncesOnUndershoot) offset = offset*RUBBER_BANDING+self.constraintMainViewTrailing.constant*(1.0f-RUBBER_BANDING);
