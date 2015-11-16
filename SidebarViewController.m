@@ -274,10 +274,6 @@
     UIViewController *destinationViewController = segue.destinationViewController;
     if ([AKGenerics object:segue.identifier isEqualToObject:SEGUE_MAINVIEW])
     {
-        if (![destinationViewController conformsToProtocol:@protocol(SidebarMainViewControllerProtocol)] && [destinationViewController isKindOfClass:[UINavigationController class]])
-        {
-            destinationViewController = ((UINavigationController *)destinationViewController).visibleViewController;
-        }
         if ([destinationViewController conformsToProtocol:@protocol(SidebarMainViewControllerProtocol)])
         {
             [self setMainViewController:(UIViewController <SidebarMainViewControllerProtocol> *)destinationViewController];
@@ -285,10 +281,6 @@
     }
     else if ([AKGenerics object:segue.identifier isEqualToObject:SEGUE_SIDEVIEW])
     {
-        if (![destinationViewController conformsToProtocol:@protocol(SidebarSideViewControllerProtocol)] && [destinationViewController isKindOfClass:[UINavigationController class]])
-        {
-            destinationViewController = ((UINavigationController *)destinationViewController).visibleViewController;
-        }
         if ([destinationViewController conformsToProtocol:@protocol(SidebarSideViewControllerProtocol)])
         {
             [self setSideViewController:(UIViewController <SidebarSideViewControllerProtocol> *)destinationViewController];
