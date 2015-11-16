@@ -99,11 +99,11 @@
     
     if ([AKGenerics object:mainViewController isEqualToObject:_mainViewController]) return;
     
-    if ([_mainViewController respondsToSelector:@selector(setSidebarPanGestureRecognizer:)]) [_mainViewController setSidebarPanGestureRecognizer:nil];
+    if ([_mainViewController respondsToSelector:@selector(removePanGestureRecognizerWithTarget:action:)]) [_mainViewController removePanGestureRecognizerWithTarget:self action:@selector(mainViewDidPan:)];
     
     _mainViewController = mainViewController;
     
-    if ([mainViewController respondsToSelector:@selector(setSidebarPanGestureRecognizer:)]) [mainViewController setSidebarPanGestureRecognizer:self.secondaryPanGestureRecognizer];
+    if ([mainViewController respondsToSelector:@selector(addPanGestureRecognizerWithTarget:action:delegate:)]) [mainViewController addPanGestureRecognizerWithTarget:self action:@selector(mainViewDidPan:) delegate:self];
 }
 
 - (void)setMainViewOffsetPortrait:(CGFloat)offset
@@ -347,11 +347,6 @@
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeSetup tags:@[AKD_UI] message:nil];
     
     [self removeObserversFromSystemInfo];
-    [self.mainView removeGestureRecognizer:self.panGestureRecognizer];
-    if ([self.mainViewController respondsToSelector:@selector(setSidebarPanGestureRecognizer:)])
-    {
-        [self.mainViewController setSidebarPanGestureRecognizer:self.secondaryPanGestureRecognizer];
-    }
 }
 
 #pragma mark - // PRIVATE METHODS (Observers) //

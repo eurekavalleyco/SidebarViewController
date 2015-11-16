@@ -16,7 +16,8 @@
 
 @protocol SidebarMainViewControllerProtocol <NSObject>
 @optional
-- (void)setSidebarPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (void)addPanGestureRecognizerWithTarget:(id)target action:(SEL)action delegate:(id <UIGestureRecognizerDelegate>)delegate;
+- (void)removePanGestureRecognizerWithTarget:(id)target action:(SEL)action;
 @end
 
 @protocol SidebarSideViewControllerProtocol <NSObject>
