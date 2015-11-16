@@ -30,8 +30,8 @@
 
 #define SHADOW_OPACITY 0.05f
 #define SHADOW_COLOR [UIColor blackColor].CGColor
-#define SHADOW_RADIUS fminf(self.mainView.frame.size.width, self.mainView.frame.size.height)*0.05f
-#define SHADOW_OFFSET CGSizeMake(0.0f, SHADOW_RADIUS*0.33f)
+#define SHADOW_RADIUS 10.0f
+#define SHADOW_OFFSET CGSizeMake(0.0f, 5.0f)
 
 #define SEGUE_MAINVIEW @"embedMainView"
 #define SEGUE_SIDEVIEW @"embedSideView"
