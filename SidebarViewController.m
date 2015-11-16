@@ -48,7 +48,6 @@
 @property (nonatomic) BOOL mainViewBouncesOnUndershoot;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic, strong) UIPanGestureRecognizer *secondaryPanGestureRecognizer;
 @property (nonatomic) CGPoint touchPoint;
 
 // GENERAL //
@@ -90,7 +89,6 @@
 @synthesize mainViewBouncesOnUndershoot = _mainViewBouncesOnUndershoot;
 @synthesize panGestureRecognizer = _panGestureRecognizer;
 @synthesize tapGestureRecognizer = _tapGestureRecognizer;
-@synthesize secondaryPanGestureRecognizer = _secondaryPanGestureRecognizer;
 @synthesize touchPoint = _touchPoint;
 
 - (void)setMainViewController:(UIViewController <SidebarMainViewControllerProtocol> *)mainViewController
@@ -154,17 +152,6 @@
     _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mainViewWasTapped:)];
     [_tapGestureRecognizer setDelegate:self];
     return _tapGestureRecognizer;
-}
-
-- (UIPanGestureRecognizer *)secondaryPanGestureRecognizer
-{
-    [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeGetter tags:@[AKD_UI] message:nil];
-    
-    if (_secondaryPanGestureRecognizer) return _secondaryPanGestureRecognizer;
-    
-    _secondaryPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mainViewDidPan:)];
-    [_secondaryPanGestureRecognizer setDelegate:self];
-    return _secondaryPanGestureRecognizer;
 }
 
 #pragma mark - // INITS AND LOADS //
