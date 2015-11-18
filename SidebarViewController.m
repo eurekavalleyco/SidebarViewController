@@ -162,11 +162,6 @@
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeSetup tags:@[AKD_UI] message:nil];
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (!self)
-    {
-        [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeCritical methodType:AKMethodTypeSetup tags:@[AKD_UI] message:[NSString stringWithFormat:@"%@ is nil", stringFromVariable(self)]];
-        return nil;
-    }
     
     [self setup];
     return self;
