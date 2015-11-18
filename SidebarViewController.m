@@ -37,6 +37,7 @@
 #define SEGUE_SIDEVIEW @"embedSideView"
 
 @interface SidebarViewController () <SidebarDelegate, UIGestureRecognizerDelegate>
+@property (nonatomic, readwrite) BOOL isOpen;
 @property (nonatomic, strong) IBOutlet UIView *tapView;
 @property (nonatomic, strong) IBOutlet UIView *mainView;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *constraintMainViewTrailing;
@@ -78,6 +79,7 @@
 
 @synthesize mainViewController = _mainViewController;
 @synthesize sideViewController = _sideViewController;
+@synthesize isOpen = _isOpen;
 @synthesize tapView = _tapView;
 @synthesize mainView = _mainView;
 @synthesize constraintMainViewTrailing = _constraintMainViewTrailing;
@@ -246,6 +248,7 @@
 {
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeUnspecified tags:@[AKD_UI] message:nil];
     
+    [self setIsOpen:open];
     NSTimeInterval animationDuration = 0.0f;
     if (animated)
     {

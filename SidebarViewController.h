@@ -20,6 +20,7 @@
 @interface SidebarViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UIViewController <SidebarMainViewControllerProtocol> *mainViewController;
 @property (nonatomic, strong) IBOutlet UIViewController <SidebarSideViewControllerProtocol> *sideViewController;
+@property (nonatomic, readonly) BOOL isOpen;
 - (void)setMainViewOffsetPortrait:(CGFloat)offset;
 - (void)setMainViewOffsetLandscape:(CGFloat)offset;
 - (void)setMainViewBouncesOnOvershoot:(BOOL)bounces;
