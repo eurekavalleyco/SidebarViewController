@@ -35,7 +35,7 @@
 #define SEGUE_MAINVIEW @"embedMainView"
 #define SEGUE_SIDEVIEW @"embedSideView"
 
-@interface SidebarViewController () <SidebarDelegate, UIGestureRecognizerDelegate>
+@interface SidebarViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, readwrite) BOOL isOpen;
 @property (nonatomic, strong) IBOutlet UIView *tapView;
 @property (nonatomic, strong) IBOutlet UIView *mainView;
