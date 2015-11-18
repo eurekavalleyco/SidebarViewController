@@ -98,10 +98,12 @@
     
     if ([AKGenerics object:mainViewController isEqualToObject:_mainViewController]) return;
     
+    if ([_mainViewController respondsToSelector:@selector(removeTapGestureRecognizerWithTarget:action:)]) [_mainViewController removeTapGestureRecognizerWithTarget:self action:@selector(mainViewWasTapped:)];
     if ([_mainViewController respondsToSelector:@selector(removePanGestureRecognizerWithTarget:action:)]) [_mainViewController removePanGestureRecognizerWithTarget:self action:@selector(mainViewDidPan:)];
     
     _mainViewController = mainViewController;
     
+    if ([mainViewController respondsToSelector:@selector(addTapGestureRecognizerWithTarget:action:)]) [mainViewController addTapGestureRecognizerWithTarget:self action:@selector(mainViewWasTapped:)];
     if ([mainViewController respondsToSelector:@selector(addPanGestureRecognizerWithTarget:action:delegate:)]) [mainViewController addPanGestureRecognizerWithTarget:self action:@selector(mainViewDidPan:) delegate:self];
 }
 
