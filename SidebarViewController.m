@@ -399,7 +399,7 @@
 {
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeUnspecified tags:@[AKD_UI] message:nil];
     
-    [self setMainViewOpen:NO animated:YES];
+    [self setMainViewOpen:!self.isOpen animated:YES];
 }
 
 #pragma mark - // PRIVATE METHODS (Other) //
