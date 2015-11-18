@@ -13,7 +13,6 @@
 #import "SidebarViewController.h"
 #import "AKDebugger.h"
 #import "AKGenerics.h"
-#import "CentralDispatch+Delegates.h"
 #import "SystemInfo.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -320,8 +319,6 @@
     [self setMainViewBouncesOnUndershoot:DEFAULT_MAINVIEW_BOUNCES_UNDERSHOOT];
     
     [self addObserversToSystemInfo];
-    
-    [CentralDispatch setSidebarDelegate:self];
 }
 
 - (void)teardown
