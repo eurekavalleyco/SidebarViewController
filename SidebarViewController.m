@@ -240,7 +240,7 @@
 
 #pragma mark - // PUBLIC METHODS //
 
-- (void)setMainViewOpen:(BOOL)open animated:(BOOL)animated
+- (void)setMainViewOpen:(BOOL)open animated:(BOOL)animated options:(UIViewAnimationOptions)options
 {
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeUnspecified tags:@[AKD_UI] message:nil];
     
@@ -255,7 +255,7 @@
     if (open) constant = self.mainViewOffset;
     [self.constraintMainViewTrailing setConstant:constant];
     [self.view setNeedsUpdateConstraints];
-    [UIView animateWithDuration:animationDuration animations:^{
+    [UIView animateWithDuration:animationDuration delay:0.0f options:options animations:^{
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         [self.tapView setHidden:!open];
@@ -370,21 +370,21 @@
             velocity = -1.0f*[panGestureRecognizer velocityInView:self.view].x;
             if (velocity > MINIMUM_SPEED)
             {
-                [self setMainViewOpen:YES animated:YES];
+                [self setMainViewOpen:YES animated:YES options:UIViewAnimationOptionCurveEaseOut];
             }
             else if (velocity < -1.0f*MINIMUM_SPEED)
             {
-                [self setMainViewOpen:NO animated:YES];
+                [self setMainViewOpen:NO animated:YES options:UIViewAnimationOptionCurveEaseOut];
             }
             else
             {
                 if (self.constraintMainViewTrailing.constant < self.mainViewOffset*0.5f)
                 {
-                    [self setMainViewOpen:NO animated:YES];
+                    [self setMainViewOpen:NO animated:YES options:UIViewAnimationOptionCurveEaseOut];
                 }
                 else
                 {
-                    [self setMainViewOpen:YES animated:YES];
+                    [self setMainViewOpen:YES animated:YES options:UIViewAnimationOptionCurveEaseOut];
                 }
             }
             [self setTouchPoint:CGPointZero];
@@ -399,7 +399,7 @@
 {
     [AKDebugger logMethod:METHOD_NAME logType:AKLogTypeMethodName methodType:AKMethodTypeUnspecified tags:@[AKD_UI] message:nil];
     
-    [self setMainViewOpen:!self.isOpen animated:YES];
+    [self setMainViewOpen:!self.isOpen animated:YES options:UIViewAnimationOptionCurveEaseInOut];
 }
 
 #pragma mark - // PRIVATE METHODS (Other) //

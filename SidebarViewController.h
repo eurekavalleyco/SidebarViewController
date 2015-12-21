@@ -25,5 +25,5 @@
 - (void)setMainViewOffsetLandscape:(CGFloat)offset;
 - (void)setMainViewBouncesOnOvershoot:(BOOL)bounces;
 - (void)setMainViewBouncesOnUndershoot:(BOOL)bounces;
-- (void)setMainViewOpen:(BOOL)open animated:(BOOL)animated;
+- (void)setMainViewOpen:(BOOL)open animated:(BOOL)animated options:(UIViewAnimationOptions)options;
 @end
